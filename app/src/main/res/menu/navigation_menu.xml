@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/nav_cart"
+        android:title="My Crat"
+        android:icon="@drawable/shopping_cart">
+    </item>
+
+    <item android:id="@+id/table"
+        android:title="Table"
+        android:icon="@drawable/table">
+
+    </item>
+    <item
+        android:icon="@drawable/sofa"
+        android:title="Sofas">
+
+    </item>
+
+    <item
+        android:icon="@drawable/chair"
+        android:title="Chair">
+
+    </item>
+    <item
+        android:title="Cupboards"
+        android:icon="@drawable/cupboard">
+
+    </item>
+    <item
+        android:title="My Account"
+        android:icon="@drawable/username_icon">
+
+    </item>
+    <item
+        android:icon="@drawable/share"
+        android:title="Store Location">
+
+    </item>
+    <item
+        android:icon="@drawable/myorders_icon"
+        android:title="My Order">
+
+    </item>
+    <item
+        android:icon="@drawable/logout_icon"
+        android:title="Logout">
+
+    </item>
+</menu>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NeoSTORE</string>
+    <string name="login_button_name">LOGIN</string>
+    <string name="register">REGISTER</string>
+    <string name="toolbar_title">Register</string>
+    <string name="reg_logo">NeoSTORE</string>
+    <string name="open"></string>
+    <string name="close"></string>
+</resources>
