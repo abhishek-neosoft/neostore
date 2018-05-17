@@ -6,4 +6,11 @@
     <string name="reg_logo">NeoSTORE</string>
     <string name="open"></string>
     <string name="close"></string>
+    <string name="register_header">Register</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="my_cart">My Cart</string>
+    <string name="delete">DELETE</string>
+
 </resources>

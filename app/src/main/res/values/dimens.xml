@@ -3,4 +3,73 @@
     <dimen name="padding">13dp</dimen>
     <dimen name="neosoft_text_size">44sp</dimen>
     <dimen name="reg_margin_top">10dp</dimen>
+
+    <dimen name="activity_padding_horizontal">16dp</dimen>
+    <dimen name="padd_10">10dp</dimen>
+    <dimen name="ic_delete">30dp</dimen>
+    <dimen name="thumbnail">90dp</dimen>
+
+
+
+    <dimen name="fifty">50sp</dimen>
+    <dimen name="fourtyNine">49sp</dimen>
+
+    <dimen name="eighteen">18sp</dimen>
+    <dimen name="main_login_password">18sp</dimen>
+    <dimen name="main_login_button">26sp</dimen>
+    <dimen name="main_forget_password">18sp</dimen>
+    <dimen name="sixteen">16sp</dimen>
+    <dimen name="eightyThree">83dp</dimen>
+    <dimen name="seventySeven">77sp</dimen>
+    <dimen name="thirteen">13sp</dimen>
+    <dimen name="thirtyThree">33sp</dimen>
+    <dimen name="hundredTen">110sp</dimen>
+    <dimen name="fifteen">15sp</dimen>
+    <dimen name="ten">10sp</dimen>
+    <dimen name="twenty">20sp</dimen>
+    <dimen name="sixty">60sp</dimen>
+    <dimen name="eleven">11sp</dimen>
+
+    <dimen name="seventeen">17dp</dimen>
+    <dimen name="fourteen">14sp</dimen>
+    <dimen name="twentyseven">27sp</dimen>
+
+    <dimen name="threehundredseventy">370dp</dimen>
+    <dimen name="onetwenty">120dp</dimen>
+    <dimen name="fourty">40dp</dimen>
+
+    <dimen name="sixteenNine">69dp</dimen>
+    <dimen name="seventyNine">79dp</dimen>
+    <dimen name="nine">9dp</dimen>
+    <dimen name="twoFiftySeven">257dp</dimen>
+    <dimen name="oneSeventyEight">178dp</dimen>
+    <dimen name="seven">7dp</dimen>
+    <dimen name="five">5dp</dimen>
+    <dimen name="twelve">12sp</dimen>
+    <dimen name="twoEighty">280dp</dimen>
+    <dimen name="oneNinety">190dp</dimen>
+    <dimen name="seventyEighty">78dp</dimen>
+    <dimen name="sixtyNine">69dp</dimen>
+    <dimen name="ninety">90dp</dimen>
+    <dimen name="twentyTwo">22dp</dimen>
+
+    <dimen name="twoSixty">260dp</dimen>
+    <dimen name="oneEighty">180dp</dimen>
+
+    <dimen name="hundredTwelve">112dp</dimen>
+    <dimen name="fourtyTwo">42dp</dimen>
+    <dimen name="oneNinetyEight">198dp</dimen>
+    <dimen name="fourtyEight">48dp</dimen>
+    <dimen name="eightyEight">88dp</dimen>
+    <dimen name="seventySix">76dp</dimen>
+    <dimen name="twentyFour">24dp</dimen>
+    <dimen name="three">3dp</dimen>
+    <dimen name="threeThirty">330dp</dimen>
+
+    <dimen name="eightyFour">84dp</dimen>
+    <dimen name="thirtyNine">39dp</dimen>
+
+    <dimen name="oneFourtyFour">144dp</dimen>
+    <dimen name="fiftyTwo">52dp</dimen>
+    <dimen name="twentyFive">25dp</dimen>
 </resources>

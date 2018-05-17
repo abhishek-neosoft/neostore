@@ -63,6 +63,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/dashboard_table"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
@@ -72,6 +73,7 @@
                         android:src="@drawable/tableicon" />
 
                     <ImageView
+                        android:id="@+id/dashboard_sofa"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15dp"
@@ -91,6 +93,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/dashboard_chair"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15dp"
@@ -102,6 +105,7 @@
                         android:src="@drawable/chairsicon" />
 
                     <ImageView
+                        android:id="@+id/dashboard_cupboard"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15dp"
@@ -118,9 +122,12 @@
             android:id="@+id/navigation_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
-            app:headerLayout="@layout/nav_header"
-            app:menu="@menu/navigation_menu" />
+            android:background="#2c2c2c"
+            app:itemTextColor="@color/white_color"
+            app:itemIconTint="@color/white_color"
+            app:menu="@menu/navigation_menu"
+            app:theme="@style/NavigationDrawerStyle"
+            android:layout_gravity="start"/>
 
     </android.support.v4.widget.DrawerLayout>
 

@@ -28,7 +28,6 @@ class DashboardPageAdapter(val context: Context) :PagerAdapter() {
         return view
 
     }
-
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
         container.removeView(`object` as LinearLayout)
     }

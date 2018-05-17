@@ -20,4 +20,44 @@
         <item name="android:layout_marginLeft">34dp</item>
         <item name="android:layout_height">40dp</item>
     </style>
+    <style name="NavigationDrawerStyle">
+        <item name="android:textSize">15sp</item><!-- text size in menu-->
+    </style>
+
+    <style name="Price">
+        <item name="android:textColor">@color/colorOrderDescription</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="btnSaveAddress">
+
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:background">@drawable/draw_btn_save_address</item>
+
+    </style>
+
+    <style name="tlbarRegistration">
+        <item name="android:elevation">4dp</item>
+        <item name="android:background">@color/color_tlbarRegistration</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="android:popupTheme">@style/Theme.AppCompat.Light</item>
+
+    </style>
+
+    <style name="CartItemName">
+        <item name="android:textColor">@color/colorOrderId</item>
+        <item name="android:textSize">@dimen/twentyFour</item>
+    </style>
+    <style name="OrderDescription">
+        <item name="android:textColor">@color/colorOrderDescription</item>
+        <item name="android:textSize">@dimen/fifteen</item>
+
+    </style>
+   <!-- <style
+   name="RatingBar"
+        parent="android:style/Widget.Material.RatingBar.Small">
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+    </style>-->
+
 </resources>

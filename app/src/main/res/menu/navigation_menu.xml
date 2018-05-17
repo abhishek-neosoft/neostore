@@ -1,50 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item android:id="@+id/nav_cart"
-        android:title="My Crat"
-        android:icon="@drawable/shopping_cart">
-    </item>
-
-    <item android:id="@+id/table"
-        android:title="Table"
-        android:icon="@drawable/table">
-
-    </item>
-    <item
-        android:icon="@drawable/sofa"
-        android:title="Sofas">
-
-    </item>
-
-    <item
-        android:icon="@drawable/chair"
-        android:title="Chair">
-
-    </item>
-    <item
-        android:title="Cupboards"
-        android:icon="@drawable/cupboard">
-
-    </item>
-    <item
-        android:title="My Account"
-        android:icon="@drawable/username_icon">
-
-    </item>
-    <item
-        android:icon="@drawable/share"
-        android:title="Store Location">
-
-    </item>
-    <item
-        android:icon="@drawable/myorders_icon"
-        android:title="My Order">
-
-    </item>
-    <item
-        android:icon="@drawable/logout_icon"
-        android:title="Logout">
-
-    </item>
+    <group
+        android:id="@+id/group_one"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_cart"
+            android:checked="true"
+            android:icon="@drawable/shopping_cart"
+            android:title="My Cart" />
+    </group>
+    <group
+        android:id="@+id/group_two"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_table"
+            android:checked="true"
+            android:icon="@drawable/table"
+            android:title="Tables" />
+    </group>
+    <group
+        android:id="@+id/group_three"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_sofa"
+            android:checked="true"
+            android:icon="@drawable/sofa"
+            android:title="Sofas">
+        </item>
+    </group>
+    <group
+        android:id="@+id/group_four"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_chair"
+            android:checked="true"
+            android:icon="@drawable/chair"
+            android:title="Chairs" />
+    </group>
+    <group
+        android:id="@+id/group_five"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_cupboard"
+            android:checked="true"
+            android:icon="@drawable/cupboard"
+            android:title="Cupboards" />
+    </group>
+    <group
+        android:id="@+id/group_six"
+        android:checkableBehavior="single">
+        <item
+            android:checked="true"
+            android:icon="@drawable/username_icon"
+            android:title="My Account" />
+    </group>
+    <group
+        android:id="@+id/group_seven"
+        android:checkableBehavior="single">
+        <item
+            android:checked="true"
+            android:icon="@drawable/share"
+            android:title="Store Location">
+        </item>
+    </group>
+    <group
+        android:id="@+id/group_eight"
+        android:checkableBehavior="single">
+        <item
+            android:checked="true"
+            android:icon="@drawable/myorders_icon"
+            android:title="My Order">
+        </item>
+    </group>
+    <group
+        android:id="@+id/group_nine"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_logout"
+            android:checked="true"
+            android:icon="@drawable/logout_icon"
+            android:title="Logout">
+        </item>
+    </group>
 </menu>

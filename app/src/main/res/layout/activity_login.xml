@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".ActivityLogin">
+    tools:context=".LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,6 +38,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:orientation="vertical">
 
             <EditText
@@ -56,6 +58,7 @@
                 style="@style/login_editext"
                 android:layout_marginTop="@dimen/padding"
                 android:background="@drawable/login_edit_text_drawable"
+                android:drawableLeft="@drawable/login_username_icon"
                 android:drawablePadding="15dp"
                 android:hint="Password"
                 android:padding="@dimen/padding"

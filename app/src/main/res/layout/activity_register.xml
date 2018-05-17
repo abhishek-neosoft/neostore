@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".ActivityRegister">
+    tools:context=".RegisterActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,6 +43,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:orientation="vertical">
 
             <EditText
@@ -52,6 +54,7 @@
                 android:background="@drawable/login_edit_text_drawable"
                 android:drawableLeft="@drawable/login_username_icon"
                 android:drawablePadding="13dp"
+                android:inputType="textPersonName"
                 android:hint="First Name"
                 android:padding="10dp"
                 android:textColor="@color/white_color"
@@ -65,39 +68,46 @@
                 android:drawableLeft="@drawable/login_username_icon"
                 android:drawablePadding="13dp"
                 android:hint="Last Name"
+                android:inputType="textPersonName"
                 android:padding="10dp"
                 android:textColor="@color/white_color"
                 android:textColorHint="@color/white_color" />
 
             <EditText
+                android:id="@+id/edt_reg_email"
                 style="@style/login_editext"
                 android:layout_marginTop="@dimen/reg_margin_top"
                 android:background="@drawable/login_edit_text_drawable"
                 android:drawableLeft="@drawable/login_username_icon"
                 android:drawablePadding="13dp"
                 android:hint="Email"
+                android:inputType="textEmailAddress"
                 android:padding="10dp"
                 android:textColor="@color/white_color"
                 android:textColorHint="@color/white_color" />
 
             <EditText
+                android:id="@+id/edt_reg_password"
                 style="@style/login_editext"
                 android:layout_marginTop="@dimen/reg_margin_top"
                 android:background="@drawable/login_edit_text_drawable"
                 android:drawableLeft="@drawable/login_username_icon"
                 android:drawablePadding="13dp"
                 android:hint="Password"
+                android:inputType="textPassword"
                 android:padding="10dp"
                 android:textColor="@color/white_color"
                 android:textColorHint="@color/white_color" />
 
             <EditText
+                android:id="@+id/edt_reg_conf_password"
                 style="@style/login_editext"
                 android:layout_marginTop="@dimen/reg_margin_top"
                 android:background="@drawable/login_edit_text_drawable"
                 android:drawableLeft="@drawable/login_username_icon"
                 android:drawablePadding="@dimen/padding"
                 android:hint="Confirm password"
+                android:inputType="textPassword"
                 android:padding="@dimen/padding"
                 android:textColor="@color/white_color"
                 android:textColorHint="@color/white_color" />
@@ -118,10 +128,12 @@
                     android:textSize="16dp" />
 
                 <RadioGroup
+                    android:id="@+id/reg_radio_group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <RadioButton
+                        android:id="@+id/reg_male"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
@@ -129,6 +141,7 @@
                         android:text="Male" />
 
                     <RadioButton
+                        android:id="@+id/reg_female"
                         android:layout_width="wrap_content"
                         android:textColor="@color/white_color"
                         android:layout_height="wrap_content"
@@ -146,17 +159,20 @@
                 android:orientation="vertical">
 
                 <EditText
+                    android:id="@+id/edt_reg_phone"
                     style="@style/login_editext"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/login_edit_text_drawable"
                     android:drawableLeft="@drawable/login_username_icon"
                     android:drawablePadding="13dp"
                     android:hint="Phone Number"
+                    android:inputType="phone"
                     android:padding="10dp"
                     android:textColor="@color/white_color"
                     android:textColorHint="@color/white_color" />
 
                 <CheckBox
+                    android:id="@+id/reg_check_box"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="68dp"
@@ -170,7 +186,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/reg_button"
                 style="@style/login_button"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="13dp"
