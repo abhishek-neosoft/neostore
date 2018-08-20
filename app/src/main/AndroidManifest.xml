@@ -22,5 +22,7 @@
         <activity android:name=".description.ProductDescriptionActivity"/>
         <activity android:name=".mycart.MyCartActivity"/>
         <activity android:name=".addaddress.AddAddress"/>
+        <activity android:name=".addaddress.AddressList"/>
+        <activity android:name=".myorder.MyOrderActivity"/>
     </application>
 </manifest>

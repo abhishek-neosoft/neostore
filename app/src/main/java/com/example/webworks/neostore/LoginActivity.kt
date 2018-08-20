@@ -19,31 +19,42 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
+
     var email: String = ""
     var password: String = ""
     lateinit var apiInterface: APIInterface
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
         val sp = getSharedPreferences("userinfo", Context.MODE_PRIVATE)
         val shareId = sp.getString("username", "")
         val sharePassword = sp.getString("password", "")
+
         if (sp.contains("username") && sp.contains("password")) {
             startActivity(Intent(this, DashBoardActivity::class.java))
             finish()
         } else {
             Toast.makeText(this, "no data found", Toast.LENGTH_LONG).show()
         }
+
         apiInterface = APIClient().getClient().create(APIInterface::class.java)
+
         if (btn_login.text == "LOGIN") {
+
             btn_login.setOnClickListener({
                 if (InternetConnection.isNetworkAvailable(this)==true) {
+
                     email = edt_id.text.toString()
                     password = edt_password.text.toString()
                     apiInterface.login(email, password).enqueue(object : Callback<UserResponseModel> {
+
                         override fun onFailure(call: Call<UserResponseModel>?, t: Throwable?) {
                         }
+
                         override fun onResponse(call: Call<UserResponseModel>?, response: Response<UserResponseModel>?) {
+
                             if (response?.code() == 200) {
                                 val data = getSharedPreferences("userinfo", Context.MODE_PRIVATE)
                                 val editor: SharedPreferences.Editor = data.edit()
@@ -73,16 +84,20 @@ class LoginActivity : AppCompatActivity() {
                 }
             })
         }
+
         txt_new_account.setOnClickListener(View.OnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         })
+
         login_forgot_password.setOnClickListener({
             edt_password.visibility = View.INVISIBLE
             edt_id.hint = "Enter your valid email id"
             btn_login.text = "SUBMIT"
+
             if (btn_login.text == "SUBMIT") {
                 btn_login.setOnClickListener({
                     apiInterface.forgotPassword(email).enqueue(object : Callback<UserResponseModel> {
+
                         override fun onFailure(call: Call<UserResponseModel>?, t: Throwable?) {
                         }
 

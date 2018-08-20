@@ -25,22 +25,28 @@ class BuyNowDialog(var positon: Int?, var descriptionResponseModel: DescriptionR
 
     lateinit var apiInterface: APIInterface
     var builder: AlertDialog.Builder? = null
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         apiInterface = APIClient().getClient().create(APIInterface::class.java)
+
         val inflater = LayoutInflater.from(context)
         val view: View = inflater.inflate(R.layout.buy_now_dialogbox, null)
         val buyNowTitle = view.findViewById<TextView>(R.id.buy_now_title)
         val buyNowImage = view.findViewById<ImageView>(R.id.buy_now_image)
         val buyNowQty = view.findViewById<EditText>(R.id.buy_now_qty)
         val buyButton = view.findViewById<Button>(R.id.buy_now_button)
+
         buyNowTitle.text = descriptionResponseModel.data!!.name
+
         val sp = context!!.getSharedPreferences("userinfo", AppCompatActivity.MODE_PRIVATE)
         val accessToken = sp.getString("access_token","")
+
         if (positon == null) {
             Glide.with(context).load(descriptionResponseModel.data!!.productImage!![0].image).into(buyNowImage)
         } else {
             Glide.with(context).load(descriptionResponseModel.data!!.productImage!![positon!!].image).into(buyNowImage)
         }
+
         buyButton.setOnClickListener {
             val qty = Integer.parseInt(buyNowQty.text.toString())
             if (qty > 0 && qty < 9) {
@@ -48,6 +54,7 @@ class BuyNowDialog(var positon: Int?, var descriptionResponseModel: DescriptionR
             apiInterface.addToCart(accessToken, productId, qty).enqueue(object : Callback<AddToCartModelResponse> {
                 override fun onFailure(call: Call<AddToCartModelResponse>?, t: Throwable?) {
                 }
+
                 override fun onResponse(call: Call<AddToCartModelResponse>?, response: Response<AddToCartModelResponse>?) {
 
                     if (response!!.code()==200)
@@ -68,6 +75,7 @@ class BuyNowDialog(var positon: Int?, var descriptionResponseModel: DescriptionR
                 Toast.makeText(context,"Out of Limit.. Quantity must be 1 to 8",Toast.LENGTH_LONG).show()
             }
         }
+
         builder = AlertDialog.Builder(context)
         builder!!.setView(view)
         return builder!!.create()

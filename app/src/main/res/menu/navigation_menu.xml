@@ -67,6 +67,7 @@
         android:id="@+id/group_eight"
         android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_my_order"
             android:checked="true"
             android:icon="@drawable/myorders_icon"
             android:title="My Order">

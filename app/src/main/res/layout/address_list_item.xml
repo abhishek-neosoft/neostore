@@ -11,6 +11,7 @@
         android:padding="@dimen/padd_10">
 
         <RadioGroup
+            android:id="@+id/radio_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -27,7 +28,8 @@
             android:layout_gravity="center"
             android:layout_marginLeft="@dimen/padd_10"
             android:scrollbars="vertical"
-            android:text="m,essgae 1" />
+            android:textSize="18dp"
+            android:text="hfghrtydgh" />
     </LinearLayout>
 
 </LinearLayout>

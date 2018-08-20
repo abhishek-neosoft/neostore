@@ -17,33 +17,42 @@ class ProductAdapterActivity(var context: Context, var data: List<DescriptionRes
     init {
         callbackAdapterPosition = context as CallbackAdapterPosition
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.description_image_items, parent, false)
         return RecyclerViewHolder(view, context)
     }
+
     override fun getItemCount(): Int {
         return data.size
     }
+
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
         holder.bind(data[position])
     }
+
     inner class RecyclerViewHolder(itemView: View?, var context: Context?) : RecyclerView.ViewHolder(itemView) {
-        var image = itemView!!.findViewById<ImageView>(R.id.recycler_image)
+            var image = itemView!!.findViewById<ImageView>(R.id.recycler_image)
+
         fun bind(item: DescriptionResponseImages) {
+
             Glide.with(context).load(item.image).into(image)
             image.setOnClickListener({
                 callbackAdapterPosition!!.onClickPosition(adapterPosition)
                 raw_index = adapterPosition
                 notifyDataSetChanged()
             })
+
             if (raw_index == adapterPosition) {
                 image.background = context!!.resources.getDrawable(R.drawable.product_description_img_edit)
-            } else {
+            }
+            else {
                 image.background = null
             }
         }
     }
+
     interface CallbackAdapterPosition
     {
         fun onClickPosition(position:Int)

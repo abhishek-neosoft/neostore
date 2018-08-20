@@ -46,29 +46,37 @@ class ProductDescriptionActivity : AppCompatActivity(), ProductAdapterActivity.C
         val catagory = intent.getStringExtra("catagoryName")
         apiInterface = APIClient().getClient().create(APIInterface::class.java)
         apiInterface.getDetails(productId).enqueue(object : Callback<DescriptionResponseModel> {
+
             override fun onFailure(call: Call<DescriptionResponseModel>?, t: Throwable?) {
                 Toast.makeText(this@ProductDescriptionActivity, "failed", Toast.LENGTH_LONG).show()
             }
             override fun onResponse(call: Call<DescriptionResponseModel>?, response: Response<DescriptionResponseModel>?) {
+
                 Glide.with(this@ProductDescriptionActivity).load(response!!.body().data!!.productImage!![0].image).into(img_product_image)
                 toolbar_txt.text = response.body().data!!.name
                 txt_title.text = response.body().data!!.name
                 txt_decp.text = "Catagoty $catagory"
                 txt_product_name.text = response.body().data!!.producer
                 txt_description.text = response.body().data!!.description
+
                 descriptionResponseModel = response.body()
+
                 txt_cost.text = "RS. ${response.body().data!!.cost}"
                 imageData= response.body().data!!.productImage
+
                 recycler_view.layoutManager = LinearLayoutManager(this@ProductDescriptionActivity, LinearLayout.HORIZONTAL, false)
                 recycler_view.adapter = ProductAdapterActivity(this@ProductDescriptionActivity, imageData!!)
             }
         })
+
         btn_rate.setOnClickListener {
             val dialog: RateDialog = RateDialog(positon,descriptionResponseModel)
             dialog.isCancelable = true
             dialog.show(supportFragmentManager, "dialog")
         }
+
         btn_buynow.setOnClickListener {
+
             val dialog=BuyNowDialog(positon,descriptionResponseModel,productId)
             dialog.isCancelable = true
             dialog.show(supportFragmentManager,"dialog")

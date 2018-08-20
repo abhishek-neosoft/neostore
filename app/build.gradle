@@ -45,4 +45,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     //CircleImageView
     implementation 'de.hdodenhof:circleimageview:2.1.0'
+
+    //validation
+
+    implementation 'com.basgeekball:awesome-validation:1.3'
 }

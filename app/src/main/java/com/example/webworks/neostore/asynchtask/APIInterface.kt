@@ -4,6 +4,9 @@ import com.example.webworks.neostore.cartmodel.AddToCartModelResponse
 import com.example.webworks.neostore.cartmodel.DeleteCartModel
 import com.example.webworks.neostore.cartmodel.ListCartModelResponse
 import com.example.webworks.neostore.descriptionmodel.DescriptionResponseModel
+import com.example.webworks.neostore.ordermodel.OrderListModel
+import com.example.webworks.neostore.ordermodel.OrderListModelResponse
+import com.example.webworks.neostore.ordermodel.PlacedOrderResponse
 import com.example.webworks.neostore.productmodel.ProductResponseModel
 import retrofit2.Call
 import retrofit2.http.*
@@ -40,9 +43,12 @@ interface APIInterface {
 
     @FormUrlEncoded
     @POST("deleteCart")
-    fun postDeleteItem(@Header("access_token") eaccessToken: String, @Field("product_id") productId: Int): Call<DeleteCartModel>
+    fun postDeleteItem(@Header("access_token") accessToken: String, @Field("product_id") productId: Int): Call<DeleteCartModel>
 
     @FormUrlEncoded
     @POST("order")
-    fun saveAddress()
+    fun saveAddress(@Header("access_token") accessToken: String ,@Field("address") address:String):Call<PlacedOrderResponse>
+
+    @GET("orderList")
+    fun orderList(@Header("access_token")accessToken:String):Call<OrderListModelResponse>
 }

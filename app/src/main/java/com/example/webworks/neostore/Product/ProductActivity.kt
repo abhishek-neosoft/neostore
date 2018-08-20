@@ -28,7 +28,7 @@ class ProductActivity : AppCompatActivity() {
             finish()
         }
         val id = intent.getIntExtra("id",0)
-        var catagory = intent.getStringExtra("catagoryName")
+        val catagory = intent.getStringExtra("catagoryName")
 
         apiInterface = APIClient().getClient().create(APIInterface::class.java)
 

@@ -2,6 +2,7 @@ package com.example.webworks.neostore.mycart
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +20,7 @@ class MyCartAdapter(var context: Context, var cartData: ArrayList<ListCartModel>
         val inflater=LayoutInflater.from(parent.context)
         val view:View = inflater.inflate(R.layout.my_cart_items,parent,false)
         return RecyclerViewHolder(view)
+
     }
 
     override fun getItemCount(): Int {
@@ -48,6 +50,8 @@ class MyCartAdapter(var context: Context, var cartData: ArrayList<ListCartModel>
             txtOrderPrice.text= "RS. ${item.product.cost}"
             Glide.with(context).load(item.product.productImages).into(imgOrderId)
 
+            Log.e("productID", item.productId.toString())
+
         }
     }
 
@@ -65,5 +69,7 @@ class MyCartAdapter(var context: Context, var cartData: ArrayList<ListCartModel>
                 return
             notifyItemRemoved(position)
         }
+
+
 
 }

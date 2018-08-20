@@ -3,16 +3,37 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#db0007"
+        app:titleMarginStart="150dp"
+        app:titleTextColor="@color/white_color">
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/tlbar_id"/>
+        <ImageView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_left_arrow" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="CART LIST"
+            android:textColor="@color/white_color"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+    </android.support.v7.widget.Toolbar>
     <include
         layout="@layout/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tlbar_id"
+        android:layout_below="@+id/tool_bar"
         android:layout_marginBottom="10dp"
         android:layout_above="@+id/total"
         />
