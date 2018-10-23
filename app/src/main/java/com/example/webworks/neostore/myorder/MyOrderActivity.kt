@@ -39,7 +39,7 @@ class MyOrderActivity:AppCompatActivity(){
               {
 
                   recyclerView.layoutManager = LinearLayoutManager(this@MyOrderActivity)
-                  recyclerView.adapter =MyOrderAdapter(response.body().data)
+                  recyclerView.adapter =MyOrderAdapter(response.body()!!.data)
 
 
               }

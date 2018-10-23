@@ -38,11 +38,11 @@ class ProductAdapterActivity(var context: Context, var data: List<DescriptionRes
         fun bind(item: DescriptionResponseImages) {
 
             Glide.with(context).load(item.image).into(image)
-            image.setOnClickListener({
+            image.setOnClickListener {
                 callbackAdapterPosition!!.onClickPosition(adapterPosition)
                 raw_index = adapterPosition
                 notifyDataSetChanged()
-            })
+            }
 
             if (raw_index == adapterPosition) {
                 image.background = context!!.resources.getDrawable(R.drawable.product_description_img_edit)

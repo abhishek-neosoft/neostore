@@ -8,7 +8,9 @@ import com.example.webworks.neostore.ordermodel.OrderListModel
 import com.example.webworks.neostore.ordermodel.OrderListModelResponse
 import com.example.webworks.neostore.ordermodel.PlacedOrderResponse
 import com.example.webworks.neostore.productmodel.ProductResponseModel
+import kotlinx.coroutines.experimental.Deferred
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.*
 
 interface APIInterface {
@@ -16,6 +18,12 @@ interface APIInterface {
     @FormUrlEncoded
     @POST("users/login")
     fun login(@Field("email") email: String, @Field("password") password: String): Call<UserResponseModel>
+
+
+    // kotlin coroutines methods
+    @FormUrlEncoded
+    @POST("users/login")
+    fun getLogin(@Field("email") email: String, @Field("password") password: String): Deferred<Response<UserResponseModel>>
 
     @FormUrlEncoded
     @POST("users/register")
@@ -30,6 +38,11 @@ interface APIInterface {
 
     @GET("products/getList")
     fun getProduct(@Query("product_category_id") productCategoryId: Int): Call<ProductResponseModel>
+
+    //kotlin coroutines
+    @GET("products/getList")
+    fun getProducts(@Query("product_category_id") productCategoryId: Int): Deferred<Response<ProductResponseModel>>
+
 
     @GET("products/getDetail")
     fun getDetails(@Query("product_id") productId: Int): Call<DescriptionResponseModel>
@@ -47,8 +60,8 @@ interface APIInterface {
 
     @FormUrlEncoded
     @POST("order")
-    fun saveAddress(@Header("access_token") accessToken: String ,@Field("address") address:String):Call<PlacedOrderResponse>
+    fun saveAddress(@Header("access_token") accessToken: String, @Field("address") address: String): Call<PlacedOrderResponse>
 
     @GET("orderList")
-    fun orderList(@Header("access_token")accessToken:String):Call<OrderListModelResponse>
+    fun orderList(@Header("access_token") accessToken: String): Call<OrderListModelResponse>
 }

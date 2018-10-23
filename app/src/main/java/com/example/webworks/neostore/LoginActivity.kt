@@ -43,8 +43,8 @@ class LoginActivity : AppCompatActivity() {
 
         if (btn_login.text == "LOGIN") {
 
-            btn_login.setOnClickListener({
-                if (InternetConnection.isNetworkAvailable(this)==true) {
+            btn_login.setOnClickListener {
+                if (InternetConnection.isNetworkAvailable(this)) {
 
                     email = edt_id.text.toString()
                     password = edt_password.text.toString()
@@ -60,14 +60,14 @@ class LoginActivity : AppCompatActivity() {
                                 val editor: SharedPreferences.Editor = data.edit()
                                 editor.putString("username", email)
                                 editor.putString("password", password)
-                                editor.putString("access_token","${response.body().data!!.accessToken}")
-                                editor.putString("name", "${response.body().data!!.firstName}" + " ${response.body().data!!.lastName}")
-                                editor.putString("email", "${response.body().data!!.email}")
-                                editor.putString("image", "${response.body().data!!.profilePic}")
+                                editor.putString("access_token","${response.body()!!.data!!.accessToken}")
+                                editor.putString("name", "${response.body()!!.data!!.firstName}" + " ${response.body()!!.data!!.lastName}")
+                                editor.putString("email", "${response.body()!!.data!!.email}")
+                                editor.putString("image", "${response.body()!!.data!!.profilePic}")
                                 editor.commit()
-                                var name = "${response.body().data!!.firstName}" + " ${response.body().data!!.lastName}"
-                                var emailid: String = "${response.body().data!!.email}"
-                                var image: String = "${response.body().data!!.profilePic}"
+                                var name = "${response.body()!!.data!!.firstName}" + " ${response.body()!!.data!!.lastName}"
+                                var emailid: String = "${response.body()!!.data!!.email}"
+                                var image: String = "${response.body()!!.data!!.profilePic}"
                                 startActivity(Intent(this@LoginActivity, DashBoardActivity::class.java))
                                 Toast.makeText(this@LoginActivity, "id " + email + "$password", Toast.LENGTH_LONG).show()
                                 finish()
@@ -77,25 +77,23 @@ class LoginActivity : AppCompatActivity() {
                             }
                         }
                     })
-                }
-                else
-                {
+                } else {
                     Toast.makeText(this@LoginActivity, "Plase enter valid id and password", Toast.LENGTH_LONG).show()
                 }
-            })
+            }
         }
 
         txt_new_account.setOnClickListener(View.OnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         })
 
-        login_forgot_password.setOnClickListener({
+        login_forgot_password.setOnClickListener {
             edt_password.visibility = View.INVISIBLE
             edt_id.hint = "Enter your valid email id"
             btn_login.text = "SUBMIT"
 
             if (btn_login.text == "SUBMIT") {
-                btn_login.setOnClickListener({
+                btn_login.setOnClickListener {
                     apiInterface.forgotPassword(email).enqueue(object : Callback<UserResponseModel> {
 
                         override fun onFailure(call: Call<UserResponseModel>?, t: Throwable?) {
@@ -111,8 +109,8 @@ class LoginActivity : AppCompatActivity() {
                             }
                         }
                     })
-                })
+                }
             }
-        })
+        }
     }
 }

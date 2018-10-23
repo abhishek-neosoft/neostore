@@ -12,7 +12,7 @@ class InternetConnection {
 
         fun isNetworkAvailable(context: Context): Boolean {
             val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            if (cm != null) {
+            if (true) {
                 val info = cm.activeNetworkInfo
 
                 if (info != null) {

@@ -23,7 +23,6 @@ class ProductDescriptionActivity : AppCompatActivity(), ProductAdapterActivity.C
 
     lateinit var descriptionResponseModel: DescriptionResponseModel
 
-
     var positon: Int = 0
     override fun onClickPosition(position: Int) {
         this.positon = position
@@ -52,17 +51,17 @@ class ProductDescriptionActivity : AppCompatActivity(), ProductAdapterActivity.C
             }
             override fun onResponse(call: Call<DescriptionResponseModel>?, response: Response<DescriptionResponseModel>?) {
 
-                Glide.with(this@ProductDescriptionActivity).load(response!!.body().data!!.productImage!![0].image).into(img_product_image)
-                toolbar_txt.text = response.body().data!!.name
-                txt_title.text = response.body().data!!.name
+                Glide.with(this@ProductDescriptionActivity).load(response!!.body()!!.data!!.productImage!![0].image).into(img_product_image)
+                toolbar_txt.text = response.body()!!.data!!.name
+                txt_title.text = response.body()!!.data!!.name
                 txt_decp.text = "Catagoty $catagory"
-                txt_product_name.text = response.body().data!!.producer
-                txt_description.text = response.body().data!!.description
+                txt_product_name.text = response.body()!!.data!!.producer
+                txt_description.text = response.body()!!.data!!.description
 
-                descriptionResponseModel = response.body()
+                descriptionResponseModel = response.body()!!
 
-                txt_cost.text = "RS. ${response.body().data!!.cost}"
-                imageData= response.body().data!!.productImage
+                txt_cost.text = "RS. ${response.body()!!.data!!.cost}"
+                imageData= response.body()!!.data!!.productImage
 
                 recycler_view.layoutManager = LinearLayoutManager(this@ProductDescriptionActivity, LinearLayout.HORIZONTAL, false)
                 recycler_view.adapter = ProductAdapterActivity(this@ProductDescriptionActivity, imageData!!)

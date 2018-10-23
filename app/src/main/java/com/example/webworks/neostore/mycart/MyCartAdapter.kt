@@ -20,7 +20,6 @@ class MyCartAdapter(var context: Context, var cartData: ArrayList<ListCartModel>
         val inflater=LayoutInflater.from(parent.context)
         val view:View = inflater.inflate(R.layout.my_cart_items,parent,false)
         return RecyclerViewHolder(view)
-
     }
 
     override fun getItemCount(): Int {

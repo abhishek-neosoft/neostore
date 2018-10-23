@@ -19,10 +19,9 @@ import retrofit2.Response
 
 class AddressList : AppCompatActivity(), AddListAdapter.CallBackAdapterAddress {
 
-
-
     var positionAddress:String?=null
     lateinit var apiInterface: APIInterface
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.address_list_activity)

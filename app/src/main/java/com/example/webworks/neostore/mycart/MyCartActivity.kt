@@ -56,7 +56,7 @@ class MyCartActivity : AppCompatActivity(), MyCartItemTouchHelper.MyCartItemTouc
 
                     recyclerView.addItemDecoration(mDividerItemDecoration)
 
-                    myCartAdapter = MyCartAdapter(this@MyCartActivity, response.body().data as ArrayList<ListCartModel>, accessToken)
+                    myCartAdapter = MyCartAdapter(this@MyCartActivity, response.body()!!.data as ArrayList<ListCartModel>, accessToken)
                     recyclerView.adapter = myCartAdapter
 
                     val simpleCallback = MyCartItemTouchHelper(0, ItemTouchHelper.LEFT, this@MyCartActivity)

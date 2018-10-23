@@ -59,7 +59,7 @@ class BuyNowDialog(var positon: Int?, var descriptionResponseModel: DescriptionR
 
                     if (response!!.code()==200)
                     {
-                        Toast.makeText(context,"${response.body().userMsg}",Toast.LENGTH_LONG).show()
+                        Toast.makeText(context,"${response.body()!!.userMsg}",Toast.LENGTH_LONG).show()
                     }
                     else
                     {

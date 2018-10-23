@@ -19,8 +19,8 @@ import kotlinx.android.synthetic.main.toolbar_nav.*
 
 class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener  {
 
-    var userid: String? = null
-    var userpass: String? = null
+    private var userid: String? = null
+    private var userpass: String? = null
     var name: String? = null
     var email: String? = null
     var image: String? = null
@@ -29,7 +29,7 @@ class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard_page_adapter)
 
-        val url: String = "https://s3-ap-southeast-1.amazonaws.com/dev-image.auxiliababy.com/photo/1523267098_1a5e7e64c9d17e449e334bf1945c48b2.jpg"
+        val url = "https://s3-ap-southeast-1.amazonaws.com/dev-image.auxiliababy.com/photo/1523267098_1a5e7e64c9d17e449e334bf1945c48b2.jpg"
         val sp = getSharedPreferences("userinfo", MODE_PRIVATE)
 
         userid = sp.getString("username", "")
@@ -59,25 +59,25 @@ class DashBoardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
 
         Glide.with(this).load(url).into(circleImageView)
 
-        dashboard_table.setOnClickListener({
+        dashboard_table.setOnClickListener {
             startActivity(Intent(this, ProductActivity::class.java).putExtra("id", 1)
                     .putExtra("catagoryName", "Table"))
-        })
-        dashboard_sofa.setOnClickListener({
+        }
+        dashboard_sofa.setOnClickListener {
             startActivity(Intent(this, ProductActivity::class.java)
                     .putExtra("id", 3)
                     .putExtra("catagoryName", "Sofa"))
-        })
-        dashboard_chair.setOnClickListener({
+        }
+        dashboard_chair.setOnClickListener {
             startActivity(Intent(this, ProductActivity::class.java)
                     .putExtra("id", 2)
                     .putExtra("catagoryName", "Chair"))
-        })
-        dashboard_cupboard.setOnClickListener({
+        }
+        dashboard_cupboard.setOnClickListener {
             startActivity(Intent(this, ProductActivity::class.java)
                     .putExtra("id", 4)
                     .putExtra("catagoryName", "Cupboard"))
-        })
+        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
