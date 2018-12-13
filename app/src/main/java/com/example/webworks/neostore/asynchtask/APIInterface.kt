@@ -43,7 +43,6 @@ interface APIInterface {
     @GET("products/getList")
     fun getProducts(@Query("product_category_id") productCategoryId: Int): Deferred<Response<ProductResponseModel>>
 
-
     @GET("products/getDetail")
     fun getDetails(@Query("product_id") productId: Int): Call<DescriptionResponseModel>
 

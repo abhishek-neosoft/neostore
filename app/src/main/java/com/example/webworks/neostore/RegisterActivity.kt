@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import com.example.webworks.neostore.R.id.reg_radio_group
 import com.example.webworks.neostore.asynchtask.APIClient
 import com.example.webworks.neostore.asynchtask.APIInterface
 import com.example.webworks.neostore.asynchtask.UserResponseModel

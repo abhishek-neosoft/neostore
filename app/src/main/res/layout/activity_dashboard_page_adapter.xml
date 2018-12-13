@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
-
+    android:orientation="vertical">
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawable"
@@ -14,7 +11,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,8 +25,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-
 
                 <android.support.v4.view.ViewPager
                     android:id="@+id/view_pager"
@@ -67,23 +61,22 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
+                        android:layout_weight="1"
                         android:background="@drawable/imageview_background"
                         android:scaleType="fitXY"
-                        android:layout_weight="1"
                         android:src="@drawable/tableicon" />
 
                     <ImageView
                         android:id="@+id/dashboard_sofa"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"
-                        android:layout_marginRight="13dp"
                         android:layout_marginTop="15dp"
+                        android:layout_marginRight="13dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
                         android:background="@drawable/imageview_background"
                         android:scaleType="fitXY"
-                        android:src="@drawable/sofaicon"
-                        android:layout_weight="1"
-                        />
+                        android:src="@drawable/sofaicon" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -96,9 +89,9 @@
                         android:id="@+id/dashboard_chair"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="15dp"
+                        android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="@drawable/imageview_background"
                         android:scaleType="fitXY"
@@ -108,11 +101,11 @@
                         android:id="@+id/dashboard_cupboard"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"
                         android:layout_marginRight="13dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
                         android:background="@drawable/imageview_background"
                         android:scaleType="fitXY"
-                        android:layout_weight="1"
                         android:src="@drawable/cupboardicon" />
                 </LinearLayout>
             </LinearLayout>
@@ -122,14 +115,11 @@
             android:id="@+id/navigation_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_gravity="start"
             android:background="#2c2c2c"
-            app:itemTextColor="@color/white_color"
             app:itemIconTint="@color/white_color"
+            app:itemTextColor="@color/white_color"
             app:menu="@menu/navigation_menu"
-            app:theme="@style/NavigationDrawerStyle"
-            android:layout_gravity="start"/>
-
+            app:theme="@style/NavigationDrawerStyle" />
     </android.support.v4.widget.DrawerLayout>
-
-
 </LinearLayout>
